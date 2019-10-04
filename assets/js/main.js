@@ -1,30 +1,19 @@
-var render = window.render
+/* eslint-disable no-console */
+
+const { Player } = require('./lib/players');
+
+const player1 = Player.create('Player', 'X');
+console.log(player1);
+
 // Gameboard
-const gameBoard =(()=>{
-    const board = ["","","",
-                   "","","",
-                   "","",""]
-
-    return {board}
+/*
+const gameBoard = (() => {
+  const board = ['', '', '', '', '', '', '', '', ''];
+  return { board };
 })();
 
-const gameController = (()=>{
-
-})();
-
-// Player Factory
-const Player = (token) =>{
-    let moves = []
-    const getToken = () => token;
-    const getMoves = () => moves;
-    const addMove = (move) =>{
-        moves.push(move)
-    }
-    return {getToken, getMoves, addMove}
-}
+const gameController = (() => {  })();
 
 // Board generator
-(function(){
-    render();
-})();
-
+(() => { render(); })();
+*/
