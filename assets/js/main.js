@@ -13,7 +13,7 @@ function playerMove (node, index) {
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
-    gameController.gameBoard[index] = currentPlayer.getToken();
+    gameController.writeBoard(index, currentPlayer.getToken());
     if (gameController.gameStatus()) {
      
       deleteEventListeners();
@@ -59,9 +59,11 @@ document.getElementById('input-submit').addEventListener('click', (e) => {
 });
 
 function playAgain(){
-    document.getElementById('play-again-button').addEventListener('click', () => {
-    gameController.gameBoard = ['', '', '', '', '', '', '', '', ''];
-    gameController.setup(nameP1, nameP2);
-    createEventListeners();
+    let playAgainBtn = document.getElementById('play-again-button');
+    playAgainBtn.addEventListener('click', () => {
+      gameController.initializeGameBoard();
+      gameController.setup(nameP1, nameP2);
+      createEventListeners();
     });
+    playAgainBtn.scrollIntoView();
 }

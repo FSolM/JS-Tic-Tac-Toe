@@ -7,7 +7,7 @@ import { board } from './board.js';
 import { gameEvaluator } from './gameEvaluator.js';
 
 export const gameController = (() => {
-  let gameBoard = ['', '', '', '', '', '', '', '', ''];
+  let gameBoard;
   let player1;
   let player2;
   let currentPlayer;
@@ -16,6 +16,14 @@ export const gameController = (() => {
     player1 = Player(nameP1, 'X');
     player2 = Player(nameP2, 'O');
   };
+
+  const initializeGameBoard = () =>{
+    gameBoard = ['', '', '', '', '', '', '', '', ''];
+  }
+
+  const writeBoard = (index, token) =>{
+    gameBoard[index] = token;
+  }
 
   const getCurrentPlayer = () => currentPlayer;
 
@@ -28,7 +36,7 @@ export const gameController = (() => {
   };
 
   const setup = (nameP1, nameP2) => {
-    
+    initializeGameBoard();
     createPlayers(nameP1, nameP2);
     board.welcome(nameP1, nameP2);
     board.render(gameBoard);
@@ -51,12 +59,13 @@ export const gameController = (() => {
   };
 
   return {
-    gameBoard,
     getCurrentPlayer,
     setCurrentPlayer,
     setup,
     gameStatus,
     printWinner,
     printTie,
+    initializeGameBoard,
+    writeBoard,
   };
 })();

@@ -2,6 +2,7 @@
 
 export const gameEvaluator = (() => {
   const checkPlayerWon = (board, token) => {
+    console.log(board)
     if (board[0] === token && board[1] === token && board[2] === token) {
       return true;
     }
