@@ -9,20 +9,25 @@ let nameP1 = '';
 let nameP2 = '';
 
 function playerMove (node, index) {
+   
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
     gameController.gameBoard[index] = currentPlayer.getToken();
     if (gameController.gameStatus()) {
+     
       deleteEventListeners();
       document.getElementById('game-over').classList.remove('set-hidden');
       gameController.printWinner(currentPlayer.getName());
       alert('Game Over');
+      playAgain();
     }
     if (gameController.printTie()) {
+      
       deleteEventListeners();
       document.getElementById('game-over').classList.remove('set-hidden');
       alert('Game Over');
+      playAgain();
     }
     gameController.setCurrentPlayer();
   }
@@ -53,7 +58,10 @@ document.getElementById('input-submit').addEventListener('click', (e) => {
   createEventListeners();
 });
 
-document.getElementById('play-again-button').addEventListener('click', () => {
-  gameController.setup(nameP1, nameP2);
-  createEventListeners();
-});
+function playAgain(){
+    document.getElementById('play-again-button').addEventListener('click', () => {
+    gameController.gameBoard = ['', '', '', '', '', '', '', '', ''];
+    gameController.setup(nameP1, nameP2);
+    createEventListeners();
+    });
+}

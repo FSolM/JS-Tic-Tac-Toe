@@ -7,7 +7,7 @@ import { board } from './board.js';
 import { gameEvaluator } from './gameEvaluator.js';
 
 export const gameController = (() => {
-  const gameBoard = ['', '', '', '', '', '', '', '', ''];
+  let gameBoard = ['', '', '', '', '', '', '', '', ''];
   let player1;
   let player2;
   let currentPlayer;
@@ -28,6 +28,7 @@ export const gameController = (() => {
   };
 
   const setup = (nameP1, nameP2) => {
+    
     createPlayers(nameP1, nameP2);
     board.welcome(nameP1, nameP2);
     board.render(gameBoard);
