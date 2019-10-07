@@ -5,10 +5,6 @@
 
 import { gameController } from './lib/gameController.js';
 
-const eventFunction = (cell, index) => {
-  playerMove(cell, index);
-};
-
 function playerMove (node, index) {
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
@@ -25,14 +21,17 @@ function playerMove (node, index) {
 function createEventListeners () {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
-    cells[i].addEventListener('click', eventFunction(cells[i], i));
+    cells[i].addEventListener('click', () => {
+      playerMove(cells[i], i);
+    });
   }
 }
 
 function deleteEventListeners () {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
-    cells[i].removeEventListener('click', eventFunction(cells[i], i));
+    const clone = cells[i].cloneNode(cells[i]);
+    cells[i].parentNode.replaceChild(clone, cells[i]);
   }
 }
 
