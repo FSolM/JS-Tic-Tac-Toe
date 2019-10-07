@@ -9,7 +9,7 @@ import { board } from './board.js';
 export const gameController = (() => {
   // let currentPlayer;
   // let winner = false;
-  // let gameBoard = ['', '', '', '', '', '', '', '', ''];
+  const gameBoard = ['', '', '', '', '', '', '', '', ''];
   let player1;
   let player2;
 
@@ -21,6 +21,7 @@ export const gameController = (() => {
   const setup = (nameP1, nameP2) => {
     createPlayers(nameP1, nameP2);
     board.welcome(nameP1, nameP2);
+    board.render(gameBoard);
   };
 
   const match = () => {

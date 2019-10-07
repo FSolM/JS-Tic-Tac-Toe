@@ -4,9 +4,9 @@
 export const board = (() => {
   const render = (gameBoard) => {
     let result = '';
-    gameBoard.board.forEach((value) => {
+    gameBoard.forEach((value) => {
       result += `<div class="board-game-cell">
-                 <span class="board-game-cell-value">${value}</span>
+                   <span class="board-game-cell-value">${value}</span>
                  </div>`;
     });
     document.getElementById('board').innerHTML = result;
