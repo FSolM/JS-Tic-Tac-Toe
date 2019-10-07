@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
 export const gameEvaluator = (() => {
-  const checkGame = (board, token) => {
+  const checkPlayerWon = (board, token) => {
     if (board[0] === token && board[1] === token && board[2] === token) {
       return true;
     }
@@ -29,5 +29,15 @@ export const gameEvaluator = (() => {
     return false;
   };
 
-  return { checkGame };
+  const checkTie = (board) => {
+    let counter = 9;
+    board.forEach((value) => {
+      if (value !== '') {
+        counter -= 1;
+      }
+    });
+    return counter === 0;
+  };
+
+  return { checkPlayerWon, checkTie };
 })();

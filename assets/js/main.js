@@ -19,6 +19,11 @@ function playerMove (node, index) {
       gameController.printWinner(currentPlayer.getName());
       alert('Game Over');
     }
+    if (gameController.printTie()) {
+      deleteEventListeners();
+      document.getElementById('game-over').classList.remove('set-hidden');
+      alert('Game Over');
+    }
     gameController.setCurrentPlayer();
   }
 }

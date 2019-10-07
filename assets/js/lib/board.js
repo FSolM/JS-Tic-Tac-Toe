@@ -26,5 +26,17 @@ export const board = (() => {
     element.innerHTML = html;
   };
 
-  return { render, welcome, injectWinner };
+  const injectTie = () => {
+    const element = document.getElementById('game-over');
+    let html = element.innerHTML;
+    html += "<h1 class='winner-title'>It's a Tie</h1>";
+    element.innerHTML = html;
+  };
+
+  return {
+    render,
+    welcome,
+    injectWinner,
+    injectTie,
+  };
 })();

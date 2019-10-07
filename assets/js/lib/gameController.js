@@ -35,10 +35,18 @@ export const gameController = (() => {
     document.getElementById('game-over').classList.add('set-hidden');
   };
 
-  const gameStatus = () => gameEvaluator.checkGame(gameBoard, currentPlayer.getToken());
+  const gameStatus = () => gameEvaluator.checkPlayerWon(gameBoard, currentPlayer.getToken());
 
   const printWinner = (name) => {
     board.injectWinner(name);
+  };
+
+  const printTie = () => {
+    if (gameEvaluator.checkTie(gameBoard)) {
+      board.injectTie();
+      return true;
+    }
+    return false;
   };
 
   return {
@@ -48,5 +56,6 @@ export const gameController = (() => {
     setup,
     gameStatus,
     printWinner,
+    printTie,
   };
 })();
