@@ -1,12 +1,33 @@
+/* eslint-disable import/prefer-default-export */
 
-const GameEvaluator = (()=>{
+export const gameEvaluator = (() => {
+  const checkGame = (board, token) => {
+    if (board[0] === token && board[1] === token && board[2] === token) {
+      return true;
+    }
+    if (board[3] === token && board[4] === token && board[5] === token) {
+      return true;
+    }
+    if (board[6] === token && board[7] === token && board[8] === token) {
+      return true;
+    }
+    if (board[0] === token && board[3] === token && board[6] === token) {
+      return true;
+    }
+    if (board[1] === token && board[4] === token && board[7] === token) {
+      return true;
+    }
+    if (board[2] === token && board[5] === token && board[8] === token) {
+      return true;
+    }
+    if (board[0] === token && board[4] === token && board[8] === token) {
+      return true;
+    }
+    if (board[2] === token && board[4] === token && board[6] === token) {
+      return true;
+    }
+    return false;
+  };
 
-  const turns = () => {};
-  const validateMove = () => {};
-  const evaluateMatch = () => {};
-
-  return { turns, validateMove, evaluateMatch };
-
+  return { checkGame };
 })();
-
-export { GameEvaluator }

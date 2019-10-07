@@ -1,29 +1,18 @@
+/* eslint-disable no-alert */
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 
 import { gameController } from './lib/gameController.js';
 
-/*
-(() => gameController)();
-(()=>{
-
-    let tictactoe = true;
-
-    while(tictactoe){
-        // gc.setup
-        gameController.setup();
-        // gc.match
-        // gc.finish
-    }
-})();
-*/
-
 function playerMove (node, index) {
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
-    gameController.setCurrentPlayer();
     gameController.gameBoard[index] = currentPlayer.getToken();
+    if (gameController.gameStatus()) {
+      alert(`${currentPlayer.getName()} Won!`);
+    }
+    gameController.setCurrentPlayer();
   }
 }
 

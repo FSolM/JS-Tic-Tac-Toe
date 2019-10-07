@@ -4,7 +4,7 @@
 
 import { Player } from './player.js';
 import { board } from './board.js';
-// import { GameEvaluator } from './gameEvaluator.js '
+import { gameEvaluator } from './gameEvaluator.js ';
 
 export const gameController = (() => {
   // let winner = false;
@@ -35,28 +35,13 @@ export const gameController = (() => {
     setCurrentPlayer();
   };
 
-  const match = () => {
-    //while (!winner) {
-      // render board
-      // decide turns
-      // player play
-      // board evalution
-      //}
-  };
-  // finish
-
-  const end = () => {
-
-  };
+  const gameStatus = () => gameEvaluator.checkGame(gameBoard, currentPlayer.getToken());
 
   return {
     gameBoard,
     getCurrentPlayer,
     setCurrentPlayer,
     setup,
-    match,
-    end,
-    player1,
-    player2,
+    gameStatus,
   };
 })();
