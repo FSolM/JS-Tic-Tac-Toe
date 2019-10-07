@@ -21,7 +21,3 @@ export const board = (() => {
 
   return { render, welcome };
 })();
-
-function playerMove (index) {
-  console.log(`You found me ${index}`);
-}
