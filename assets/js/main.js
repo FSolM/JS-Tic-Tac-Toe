@@ -18,7 +18,9 @@ import { gameController } from './lib/gameController.js';
 })();
 */
 
-function playerMove (index) {
+function playerMove (node, index) {
+  console.log('Event targeted');
+  node.innerHTML = '<span class="board-game-cell-value">X</span>';
   // Check if cell empty
   // Check who's the current player
   // Write current player's symbol
@@ -28,7 +30,7 @@ function createEventListeners () {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
     cells[i].addEventListener('click', () => {
-      console.log(`You found me! ${i}`);
+      playerMove(cells[i], i);
     });
   }
 }

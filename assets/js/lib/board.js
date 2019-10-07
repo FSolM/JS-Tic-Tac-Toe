@@ -5,9 +5,7 @@ export const board = (() => {
   const render = (gameBoard) => {
     let result = '';
     gameBoard.forEach((value, index) => {
-      result += `<div id="index-${index}" class="board-game-cell">
-                   <span class="board-game-cell-value">${value}</span>
-                 </div>`;
+      result += `<div id="index-${index}" class="board-game-cell"></div>`;
     });
     document.getElementById('board').innerHTML = result;
   };
