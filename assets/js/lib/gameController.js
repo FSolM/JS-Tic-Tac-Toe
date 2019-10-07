@@ -4,7 +4,7 @@
 
 import { Player } from './player.js';
 import { board } from './board.js';
-import { gameEvaluator } from './gameEvaluator.js ';
+import { gameEvaluator } from './gameEvaluator.js';
 
 export const gameController = (() => {
   const gameBoard = ['', '', '', '', '', '', '', '', ''];
@@ -32,9 +32,14 @@ export const gameController = (() => {
     board.welcome(nameP1, nameP2);
     board.render(gameBoard);
     setCurrentPlayer();
+    document.getElementById('game-over').classList.add('set-hidden');
   };
 
   const gameStatus = () => gameEvaluator.checkGame(gameBoard, currentPlayer.getToken());
+
+  const printWinner = (name) => {
+    board.injectWinner(name);
+  };
 
   return {
     gameBoard,
@@ -42,5 +47,6 @@ export const gameController = (() => {
     setCurrentPlayer,
     setup,
     gameStatus,
+    printWinner,
   };
 })();

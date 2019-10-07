@@ -19,5 +19,12 @@ export const board = (() => {
     versus.innerHTML = `<h1>${nameP1} (X) vs ${nameP2} (O)</h1>`;
   };
 
-  return { render, welcome };
+  const injectWinner = (name) => {
+    const element = document.getElementById('game-over');
+    let html = element.innerHTML;
+    html += `<h1 class="winner-title">${name}</h1>`;
+    element.innerHTML = html;
+  };
+
+  return { render, welcome, injectWinner };
 })();
