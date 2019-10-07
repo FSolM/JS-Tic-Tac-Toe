@@ -19,11 +19,11 @@ import { gameController } from './lib/gameController.js';
 */
 
 function playerMove (node, index) {
-  console.log('Event targeted');
-  node.innerHTML = '<span class="board-game-cell-value">X</span>';
-  // Check if cell empty
-  // Check who's the current player
-  // Write current player's symbol
+  if (!node.hasChildNodes()) {
+    const currentPlayer = gameController.getCurrentPlayer();
+    node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
+    gameController.setCurrentPlayer();
+  }
 }
 
 function createEventListeners () {

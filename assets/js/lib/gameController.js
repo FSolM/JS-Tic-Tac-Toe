@@ -7,21 +7,32 @@ import { board } from './board.js';
 // import { GameEvaluator } from './gameEvaluator.js '
 
 export const gameController = (() => {
-  // let currentPlayer;
   // let winner = false;
   const gameBoard = ['', '', '', '', '', '', '', '', ''];
   let player1;
   let player2;
+  let currentPlayer;
 
   const createPlayers = (nameP1, nameP2) => {
     player1 = Player(nameP1, 'X');
     player2 = Player(nameP2, 'O');
   };
 
+  const getCurrentPlayer = () => currentPlayer;
+
+  const setCurrentPlayer = () => {
+    if (currentPlayer === player1) {
+      currentPlayer = player2;
+    } else {
+      currentPlayer = player1;
+    }
+  };
+
   const setup = (nameP1, nameP2) => {
     createPlayers(nameP1, nameP2);
     board.welcome(nameP1, nameP2);
     board.render(gameBoard);
+    setCurrentPlayer();
   };
 
   const match = () => {
@@ -39,6 +50,9 @@ export const gameController = (() => {
   };
 
   return {
+    gameBoard,
+    getCurrentPlayer,
+    setCurrentPlayer,
     setup,
     match,
     end,
