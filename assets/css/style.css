@@ -2,6 +2,10 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.set-hidden {
+  display: none;
+}
+
 .boardgame {
   width: 60%;
   margin: 0 auto;
@@ -46,5 +50,17 @@ html {
 
 .boardgame-cell-value {
   font-size: 8em;
+}
+
+#player-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+
+#player-input input {
+  margin-right: 30px;
 }
 /*# sourceMappingURL=style.css.map */
