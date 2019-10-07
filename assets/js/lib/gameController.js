@@ -17,13 +17,13 @@ export const gameController = (() => {
     player2 = Player(nameP2, 'O');
   };
 
-  const initializeGameBoard = () =>{
+  const initializeGameBoard = () => {
     gameBoard = ['', '', '', '', '', '', '', '', ''];
-  }
+  };
 
-  const writeBoard = (index, token) =>{
+  const writeBoard = (index, token) => {
     gameBoard[index] = token;
-  }
+  };
 
   const getCurrentPlayer = () => currentPlayer;
 

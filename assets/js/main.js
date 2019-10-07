@@ -1,7 +1,6 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-alert */
 /* eslint-disable import/extensions */
-/* eslint-disable no-console */
 
 import { gameController } from './lib/gameController.js';
 
@@ -9,13 +8,11 @@ let nameP1 = '';
 let nameP2 = '';
 
 function playerMove (node, index) {
-   
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
     gameController.writeBoard(index, currentPlayer.getToken());
     if (gameController.gameStatus()) {
-     
       deleteEventListeners();
       document.getElementById('game-over').classList.remove('set-hidden');
       gameController.printWinner(currentPlayer.getName());
@@ -23,7 +20,6 @@ function playerMove (node, index) {
       playAgain();
     }
     if (gameController.printTie()) {
-      
       deleteEventListeners();
       document.getElementById('game-over').classList.remove('set-hidden');
       alert('Game Over');
@@ -50,6 +46,16 @@ function deleteEventListeners () {
   }
 }
 
+function playAgain () {
+  const btn = document.getElementById('play-again-button');
+  btn.addEventListener('click', () => {
+    gameController.initializeGameBoard();
+    gameController.setup(nameP1, nameP2);
+    createEventListeners();
+  });
+  btn.scrollIntoView();
+}
+
 document.getElementById('input-submit').addEventListener('click', (e) => {
   e.preventDefault();
   nameP1 = document.getElementById('player1').value;
@@ -57,13 +63,3 @@ document.getElementById('input-submit').addEventListener('click', (e) => {
   gameController.setup(nameP1, nameP2);
   createEventListeners();
 });
-
-function playAgain(){
-    let playAgainBtn = document.getElementById('play-again-button');
-    playAgainBtn.addEventListener('click', () => {
-      gameController.initializeGameBoard();
-      gameController.setup(nameP1, nameP2);
-      createEventListeners();
-    });
-    playAgainBtn.scrollIntoView();
-}
