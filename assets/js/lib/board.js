@@ -22,7 +22,7 @@ export const board = (() => {
   const injectWinner = (name) => {
     const element = document.getElementById('game-over');
     let html = element.innerHTML;
-    html += `<h1 class="winner-title">${name}</h1>`;
+    html += `<h1 class="winner-title">${name} Won!</h1>`;
     element.innerHTML = html;
   };
 
