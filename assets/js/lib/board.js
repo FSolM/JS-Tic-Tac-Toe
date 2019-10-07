@@ -1,6 +1,6 @@
 // Handles Render & Board Updates
 
-const Board = (()=>{
+const Board = (() => {
 
   const render = (gameBoard) => {
     let result = '';
@@ -16,13 +16,14 @@ const Board = (()=>{
     // hide inputs
     document.getElementById('player-input').classList.add('set-hidden');
     // show versus title
-    let versus = document.getElementById('versus-container').classList.remove('set-hidden');
-    versus.innerHTML = `<h1>${p1_name} vs ${p2_name} </h1>`
-  }
+    let versus = document.getElementById('versus-container');
+    versus.classList.remove('set-hidden');
+    versus.innerHTML = `<h1>${p1_name} vs ${p2_name}</h1>`
+  };
 
   return { render, welcome }
 
-});
+})();
 
 
 

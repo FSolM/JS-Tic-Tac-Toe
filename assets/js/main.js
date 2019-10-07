@@ -18,13 +18,10 @@ import { gameController } from './lib/gameController.js';
 
 })();
  */
-document.getElementById('player-input').addEventListener('click',(e) => {
-
+document.getElementById('input-submit').addEventListener('click',(e) => {
     const player1_name = document.getElementById('player1').value;
     const player2_name = document.getElementById('player2').value;
-
     gameController.createPlayers(player1_name, player2_name);
-    console.log(gameController.getPlayers);
     gameController.setup();
 
 })
