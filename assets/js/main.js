@@ -23,6 +23,7 @@ function playerMove (node, index) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
     gameController.setCurrentPlayer();
+    gameController.gameBoard[index] = currentPlayer.getToken();
   }
 }
 
