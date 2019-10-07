@@ -7,7 +7,6 @@ import { board } from './board.js';
 import { gameEvaluator } from './gameEvaluator.js ';
 
 export const gameController = (() => {
-  // let winner = false;
   const gameBoard = ['', '', '', '', '', '', '', '', ''];
   let player1;
   let player2;

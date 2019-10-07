@@ -1,8 +1,13 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-alert */
 /* eslint-disable import/extensions */
 /* eslint-disable no-console */
 
 import { gameController } from './lib/gameController.js';
+
+const eventFunction = (cell, index) => {
+  playerMove(cell, index);
+};
 
 function playerMove (node, index) {
   if (!node.hasChildNodes()) {
@@ -11,6 +16,7 @@ function playerMove (node, index) {
     gameController.gameBoard[index] = currentPlayer.getToken();
     if (gameController.gameStatus()) {
       alert(`${currentPlayer.getName()} Won!`);
+      deleteEventListeners();
     }
     gameController.setCurrentPlayer();
   }
@@ -19,9 +25,14 @@ function playerMove (node, index) {
 function createEventListeners () {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
-    cells[i].addEventListener('click', () => {
-      playerMove(cells[i], i);
-    });
+    cells[i].addEventListener('click', eventFunction(cells[i], i));
+  }
+}
+
+function deleteEventListeners () {
+  const cells = document.getElementsByClassName('board-game-cell');
+  for (let i = 0; i < cells.length; i += 1) {
+    cells[i].removeEventListener('click', eventFunction(cells[i], i));
   }
 }
 
