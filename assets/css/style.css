@@ -2,11 +2,32 @@ html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+.player-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.player-input input {
+  margin-right: 30px;
+}
+
 .set-hidden {
   display: none;
 }
 
-.boardgame {
+.versus-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.board-game {
   width: 60%;
   margin: 0 auto;
   display: -webkit-box;
@@ -19,7 +40,7 @@ html {
       flex-wrap: wrap;
 }
 
-.boardgame-cell {
+.board-game-cell {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   width: 33%;
@@ -39,28 +60,16 @@ html {
           align-items: center;
 }
 
-.boardgame-cell:hover {
+.board-game-cell:hover {
   background-color: gray;
   cursor: pointer;
 }
 
-.boardgame-cell:active {
+.board-game-cell:active {
   background-color: lightblue;
 }
 
-.boardgame-cell-value {
+.board-game-cell-value {
   font-size: 8em;
-}
-
-#player-input {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 60%;
-  margin: 0 auto;
-}
-
-#player-input input {
-  margin-right: 30px;
 }
 /*# sourceMappingURL=style.css.map */

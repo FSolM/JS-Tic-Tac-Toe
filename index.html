@@ -10,8 +10,7 @@
 <body>
   <div class="container">
     <h1>TIC TAC TOE</h1>
-
-    <div id="player-input" class=""> 
+    <div id="player-input" class="player-input"> 
       <div>
         <label for="player1">Player 1</label>
         <input id="player1" name="player1" type="text"/>
@@ -20,14 +19,10 @@
         <label for="player2">Player 2</label>
         <input id="player2" type="text" name="player2" />
       </div>
-      <button id="input-submit" > Play </button>
+      <button id="input-submit">Play</button>
     </div>
-
-    <div id="versus-container" class="set-hidden">
-      
-    </div>
-
-    <div id="board" class="boardgame"></div>
+    <div id="versus-container" class="versus-container set-hidden"></div>
+    <div id="board" class="board-game"></div>
   </div>
   <script type="module" src="assets/js/main.js"></script>
 </body>

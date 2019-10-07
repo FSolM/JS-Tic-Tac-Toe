@@ -1,12 +1,20 @@
-html{
-    font-family: Arial, Helvetica, sans-serif;
+html { font-family: Arial, Helvetica, sans-serif; }
+
+.player-input {
+  display: flex;
+  width: 60%;
+  margin: 0 auto;
+  input { margin-right: 30px; }
 }
 
-.set-hidden{
-    display: none;
+.set-hidden { display: none; }
+
+.versus-container {
+  display: flex;
+  justify-content: center;
 }
 
-.boardgame{
+.board-game{
     width: 60%;
     margin: 0 auto;
     display: flex;
@@ -32,15 +40,5 @@ html{
         &-value{
             font-size: 8em;
         }
-    }
-}
-
-#player-input{
-    display: flex;
-    width: 60%;
-    margin: 0 auto;
-
-    input{
-        margin-right: 30px;
     }
 }

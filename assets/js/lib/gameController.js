@@ -1,29 +1,26 @@
-// Handles Game Logic & Current Player Turn
-import { Player } from './player.js'
-import { Board } from './board.js'
-import { GameEvaluator } from './gameEvaluator.js '
+/* eslint-disable import/prefer-default-export */
+/* eslint-disable no-undef */
+/* eslint-disable import/extensions */
 
-const gameController = (() => {
+import { Player } from './player.js';
+import { board } from './board.js';
+// import { GameEvaluator } from './gameEvaluator.js '
 
-  let currentPlayer;
-  
-  let winner = false;
-  
-  let gameBoard = ['', '', '', '', '', '', '', '', ''];
-  
+export const gameController = (() => {
+  // let currentPlayer;
+  // let winner = false;
+  // let gameBoard = ['', '', '', '', '', '', '', '', ''];
   let player1;
   let player2;
 
-
-  const createPlayers = (player1_name, player2_name) =>{
-
-    player1 = Player(player1_name, "X");    
-    player2 = Player(player2_name, "O");
-  
+  const createPlayers = (nameP1, nameP2) => {
+    player1 = Player(nameP1, 'X');
+    player2 = Player(nameP2, 'O');
   };
 
-  const setup = () =>{
-     Board.welcome(player1.getName(), player2.getName());
+  const setup = (nameP1, nameP2) => {
+    createPlayers(nameP1, nameP2);
+    board.welcome(nameP1, nameP2);
   };
 
   const match = () => {
@@ -40,8 +37,11 @@ const gameController = (() => {
 
   };
 
-  return { setup, match, end, player1, player2, createPlayers }
-
+  return {
+    setup,
+    match,
+    end,
+    player1,
+    player2,
+  };
 })();
-
-export { gameController }

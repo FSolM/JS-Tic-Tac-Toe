@@ -1,9 +1,10 @@
+/* eslint-disable import/extensions */
 /* eslint-disable no-console */
+
 import { gameController } from './lib/gameController.js';
 
-/* (() => gameController)();
-
-
+/*
+(() => gameController)();
 (()=>{
 
     let tictactoe = true;
@@ -14,14 +15,12 @@ import { gameController } from './lib/gameController.js';
         // gc.match
         // gc.finish
     }
-
-
 })();
- */
-document.getElementById('input-submit').addEventListener('click',(e) => {
-    const player1_name = document.getElementById('player1').value;
-    const player2_name = document.getElementById('player2').value;
-    gameController.createPlayers(player1_name, player2_name);
-    gameController.setup();
+*/
 
-})
+document.getElementById('input-submit').addEventListener('click', (e) => {
+  e.preventDefault();
+  const nameP1 = document.getElementById('player1').value;
+  const nameP2 = document.getElementById('player2').value;
+  gameController.setup(nameP1, nameP2);
+});
