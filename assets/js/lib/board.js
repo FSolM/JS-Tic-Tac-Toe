@@ -4,8 +4,8 @@
 export const board = (() => {
   const render = (gameBoard) => {
     let result = '';
-    gameBoard.forEach((value) => {
-      result += `<div class="board-game-cell">
+    gameBoard.forEach((value, index) => {
+      result += `<div id="index-${index}" class="board-game-cell">
                    <span class="board-game-cell-value">${value}</span>
                  </div>`;
     });
@@ -23,3 +23,7 @@ export const board = (() => {
 
   return { render, welcome };
 })();
+
+function playerMove (index) {
+  console.log(`You found me ${index}`);
+}
