@@ -15,8 +15,7 @@ const playerMove = (node, index) => {
     if (gameController.gameStatus()) {
       gameController.printWinner(currentPlayer.getName());
       gameOver();
-    }
-    else if (gameController.printTie()) { gameOver(); }
+    } else if (gameController.printTie()) { gameOver(); }
     gameController.setCurrentPlayer();
   }
 };
