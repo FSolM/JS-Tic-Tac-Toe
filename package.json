@@ -1,11 +1,12 @@
 {
-  "name": "js-library",
+  "name": "js-tic-tac-toe",
   "version": "1.0.0",
   "description": "Carlos Sol: <a href=\"https://github.com/FSolM\">@FSolM</a><br>\r Diego Arvizu: <a href=\"https://github.com/diegoarvz4\">@diegoarvz4</a>",
   "main": "index.js",
   "dependencies": {
     "babel-eslint": "^10.0.3",
-    "eslint-config-airbnb": "^18.0.1"
+    "eslint-config-airbnb": "^18.0.1",
+    "live-server": "^1.2.1"
   },
   "devDependencies": {
     "eslint": "^6.5.1",
@@ -16,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FSolM/JS-library.git"
+    "url": "git+https://github.com/diegoarvz4/tic-tac-toe-js.git"
   },
-  "author": "",
+  "author": "FSolM & diegoarvz4",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/FSolM/JS-library/issues"
+    "url": "https://github.com/diegoarvz4/tic-tac-toe-js/issues"
   },
-  "homepage": "https://github.com/FSolM/JS-library#readme"
+  "homepage": "https://github.com/diegoarvz4/tic-tac-toe-js#readme"
 }
