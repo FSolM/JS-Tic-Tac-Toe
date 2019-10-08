@@ -16,14 +16,12 @@ const playerMove = (node, index) => {
       gameController.printWinner(currentPlayer.getName());
       gameOver();
     }
-    else if (gameController.printTie()) {
-      gameOver();
-    }
+    else if (gameController.printTie()) { gameOver(); }
     gameController.setCurrentPlayer();
   }
 };
 
-const gameOver = () =>{
+const gameOver = () => {
   deleteEventListeners();
   document.getElementById('game-over').classList.remove('set-hidden');
   playAgain();
