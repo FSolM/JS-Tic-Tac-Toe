@@ -13,21 +13,21 @@ const playerMove = (node, index) => {
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
     gameController.writeBoard(index, currentPlayer.getToken());
     if (gameController.gameStatus()) {
-      deleteEventListeners();
-      document.getElementById('game-over').classList.remove('set-hidden');
       gameController.printWinner(currentPlayer.getName());
-      alert('Game Over');
-      playAgain();
+      gameOver();
     }
-    if (gameController.printTie()) {
-      deleteEventListeners();
-      document.getElementById('game-over').classList.remove('set-hidden');
-      alert('Game Over');
-      playAgain();
+    else if (gameController.printTie()) {
+      gameOver();
     }
     gameController.setCurrentPlayer();
   }
-}
+};
+
+const gameOver = () =>{
+  deleteEventListeners();
+  document.getElementById('game-over').classList.remove('set-hidden');
+  playAgain();
+};
 
 const createEventListeners = () => {
   const cells = document.getElementsByClassName('board-game-cell');
@@ -36,7 +36,7 @@ const createEventListeners = () => {
       playerMove(cells[i], i);
     });
   }
-}
+};
 
 const deleteEventListeners = () => {
   const cells = document.getElementsByClassName('board-game-cell');
@@ -44,7 +44,7 @@ const deleteEventListeners = () => {
     const clone = cells[i].cloneNode(cells[i]);
     cells[i].parentNode.replaceChild(clone, cells[i]);
   }
-}
+};
 
 const playAgain = () => {
   const btn = document.getElementById('play-again-button');
@@ -54,7 +54,7 @@ const playAgain = () => {
     createEventListeners();
   });
   btn.scrollIntoView();
-}
+};
 
 document.getElementById('input-submit').addEventListener('click', (e) => {
   e.preventDefault();
