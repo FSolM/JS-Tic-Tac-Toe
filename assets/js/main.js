@@ -7,7 +7,7 @@ import { gameController } from './lib/gameController.js';
 let nameP1 = '';
 let nameP2 = '';
 
-function playerMove (node, index) {
+const playerMove = (node, index) => {
   if (!node.hasChildNodes()) {
     const currentPlayer = gameController.getCurrentPlayer();
     node.innerHTML = `<span class="board-game-cell-value">${currentPlayer.getToken()}</span>`;
@@ -29,7 +29,7 @@ function playerMove (node, index) {
   }
 }
 
-function createEventListeners () {
+const createEventListeners = () => {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
     cells[i].addEventListener('click', () => {
@@ -38,7 +38,7 @@ function createEventListeners () {
   }
 }
 
-function deleteEventListeners () {
+const deleteEventListeners = () => {
   const cells = document.getElementsByClassName('board-game-cell');
   for (let i = 0; i < cells.length; i += 1) {
     const clone = cells[i].cloneNode(cells[i]);
@@ -46,7 +46,7 @@ function deleteEventListeners () {
   }
 }
 
-function playAgain () {
+const playAgain = () => {
   const btn = document.getElementById('play-again-button');
   btn.addEventListener('click', () => {
     gameController.initializeGameBoard();
