@@ -2,7 +2,7 @@
 ### JS ES6 using Module Pattern Factory Functions
 #### Project 2
 
-**Live Page:** https://fsolm.github.io/JS-Tic-Tac-Toe/
+**Live Page:** https://fsolm.github.io/JS-TicTacToe/
 
 ## Usage & Installation
 
