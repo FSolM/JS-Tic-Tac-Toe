@@ -1,18 +1,37 @@
-# JavaScript TIC TAC TOE
-### JS ES6 using Module Pattern Factory Functions
-#### Project 2
+# JavaScript's TicTacToe
 
-**Live Page:** https://fsolm.github.io/JS-TicTacToe/
+##### Project 2
 
-## Usage & Installation
+#### A TicTacToe Web game using JS ES6's Module Pattern & Factory Functions
 
-To be able to run the game, you'll need either a live server extension or install the necessary *npm* packages
+## About
 
-For the fist option, if you're using Visual Studio Code, we recommend using `Live Server` by `Litwick Rey`
+This JS Web project creates a TicTacToe game that can be played by two people locally. It uses JS' modularization and DOM manipulation to make the game as smooth as possible.
 
-For the second option, you'll need to have installed `Node.js` & be able to download npm packages. Install all npm packages in the project with the `npm i` command, and be sure to also download them globally using the `npm i -g` command. Once all the packages are installed, you can run the project locally using the `live-server` command
+## Details
 
-#### Created by:
+**Live Page:** [GitHub Hosting](https://fsolm.github.io/JS-TicTacToe/)
 
-Carlos Sol: [@FSolM](https://github.com/FSolM)<br>
+## Installation
+
+All the necessary files are in the root directory, just open the HTML file.
+
+Alternately, if you have `Node.js` installed, you can run the command `$ npm install` to add `Litwick Reys`'s `Live Server` and execute `$ live-server`. If that doesn't work, you can check its docs over [here](https://github.com/ritwickdey/vscode-live-server)
+
+## Screenshots
+
+![Screenshot](/screenshots/JSP2.png)
+
+## Known Issues
+
+There are currently no known issues with this project.
+
+## Planned Implementation
+
+None, the goal of this project was completed and it's not necessary to revisit it.
+
+## Contact
+
+Carlos Sol: [@FSolM](https://github.com/FSolM)
+
 Diego Arvizu: [@diegoarvz4](https://github.com/diegoarvz4)
